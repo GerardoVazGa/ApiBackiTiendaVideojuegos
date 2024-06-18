@@ -1,0 +1,15 @@
+Comando para poder correrlo
+Instalar estas bibliotecas
+pip install fastapi uvicorn cassandra-driver pydantic
+* fastapi: Es el framework web moderno y rápido para Python.
+* uvicorn: Es un servidor ASGI rápido que se utiliza para ejecutar aplicaciones FastAPI (y otras aplicaciones ASGI compatibles).
+* cassandra-driver: Es el controlador oficial de Cassandra para Python, que te permite interactuar con una base de datos Cassandra desde tu aplicación Python.
+* pydantic: Es una biblioteca para la validación de datos y la configuración de esquemas en Python. 
+  Es utilizada internamente por FastAPI para validar las solicitudes y respuestas de API basadas en modelos definidos con Pydantic.
+
+Instalar
+pip install pyjwt
+*Serviria para el token de autorizacion
+
+Comando para ejecutar el api
+python -m uvicorn main:app --reload
