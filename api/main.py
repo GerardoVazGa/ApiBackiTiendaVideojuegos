@@ -23,8 +23,8 @@ app.add_middleware(
 )
 
 # Conexión al clúster de Cassandra
-cluster = Cluster(['172.16.158.116', '172.16.156.170', '172.16.154.210', '172.16.152.246'])
-session = cluster.connect('tiendavideojuegos')
+cluster = Cluster(['192.168.100.25', '192.168.100.27', '192.168.100.50', '192.168.100.42']) #Seeds de los nodos del cluster
+session = cluster.connect('tiendavideojuegos') #KEYSPACE de la base de datos
 
 # Configuración de JWT
 SECRET_KEY = "your-secret-key"
@@ -425,6 +425,7 @@ def registrar_venta(user_id: str):
         else:
             raise HTTPException(status_code=404, detail=f"No se encontraron detalles para el producto '{item['nombre']}'")
         
+        #ingresar en el reporte de ventas el producto
         query_venta = """
             INSERT INTO venta (
                 titulo_producto, cantidad, nombre_tienda, categoria_producto, plataforma, precio_producto, total_pagar
